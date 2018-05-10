@@ -27,7 +27,7 @@ module.exports = function (config) {
             'karma-chai',
             'karma-mocha',
             'karma-spec-reporter',
-            'karma-coverage',
+            // 'karma-coverage',
             'karma-coverage-istanbul-reporter',
             'karma-sourcemap-loader',
             'karma-sinon',
@@ -41,17 +41,19 @@ module.exports = function (config) {
         reporters: [
             'spec',
             // 'progress',
-            'coverage',
+            // 'coverage',
             'coverage-istanbul'
         ],
-        coverageReporter: {
-            dir: pathUtil.resolve('test/unit') + '/coverage',
-            reporters: [
-                {type: 'html', subdir: 'report-html'},
-                {type: 'lcov', subdir: 'report-lcov'},
-                {type: 'lcovonly', subdir: '.', file: 'text-summary.txt'}
-            ]
-        },
+        // coverageReporter: {
+        //     dir: pathUtil.resolve('test/unit') + '/coverage',
+        //     reporters: [
+        //         {type: 'html', subdir: 'report-html'},
+        //         {type: 'lcov', subdir: 'report-lcov'},
+        //         {type: 'lcovonly', subdir: '.', file: 'text-summary.txt'},
+        //         {type: 'text', subdir: '.', file: 'text.txt'},
+        //         {type: 'text-summary'}
+        //     ],
+        // },
         specReporter: {
             maxLogLines: 5,             // limit number of lines logged per test
             suppressErrorSummary: true, // do not print error summary
@@ -67,20 +69,19 @@ module.exports = function (config) {
             noInfo: false
         },
         coverageIstanbulReporter: {
-            // dir: pathUtil.resolve('test/unit') + '/coverage',
-            reports: ['text-summary'], //'html', 'lcovonly',
+            dir: pathUtil.resolve('test/unit') + '/coverage',
+            reports: ['html','lcovonly', 'text-summary'], //'html', 'lcovonly',
             fixWebpackSourcePaths: true,
             skipFilesWithNoCoverage: true,
             combineBrowserReports: true,
-            // 'report-config': {
-            //
-            //     // all options available at: https://github.com/istanbuljs/istanbuljs/blob/aae256fb8b9a3d19414dcf069c592e88712c32c6/packages/istanbul-reports/lib/html/index.js#L135-L137
-            //     html: {
-            //         // outputs the report in ./coverage/html
-            //         subdir: 'html'
-            //     }
-            //
-            // },
+            'report-config': {
+
+                // all options available at: https://github.com/istanbuljs/istanbuljs/blob/aae256fb8b9a3d19414dcf069c592e88712c32c6/packages/istanbul-reports/lib/html/index.js#L135-L137
+                html: {
+                    // outputs the report in ./coverage/report-html
+                    subdir: 'report-html'
+                }
+            },
             thresholds: {
                 emitWarning: false,
                 global: {
