@@ -9,10 +9,10 @@ module.exports = {
             '@': pathUtil.resolve('public/javascripts')
         }
     },
-    output: {
-        path: pathUtil.resolve('target'),
-        filename: pkg.name + '.test.js'
-    },
+    // output: {
+    //     path: pathUtil.resolve('target'),
+    //     filename: pkg.name + '.test.js'
+    // },
     module: {
         rules: [
             // {

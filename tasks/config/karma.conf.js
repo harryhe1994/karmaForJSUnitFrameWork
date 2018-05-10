@@ -64,7 +64,7 @@ module.exports = function (config) {
         webpack: webpackTestConfig,
         webpackMiddleware: {
             stats: 'errors-only',
-            noInfo: true
+            noInfo: false
         },
         coverageIstanbulReporter: {
             // dir: pathUtil.resolve('test/unit') + '/coverage',
