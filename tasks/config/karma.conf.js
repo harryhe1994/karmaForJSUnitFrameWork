@@ -70,7 +70,7 @@ module.exports = function (config) {
         },
         coverageIstanbulReporter: {
             dir: pathUtil.resolve('test/unit') + '/coverage',
-            reports: ['html','lcovonly', 'text-summary'], //'html', 'lcovonly',
+            reports: ['html', 'lcovonly', 'text-summary'], //'html', 'lcovonly',
             fixWebpackSourcePaths: true,
             skipFilesWithNoCoverage: true,
             combineBrowserReports: true,
@@ -92,6 +92,5 @@ module.exports = function (config) {
                 }
             }
         }
-    })
-    ;
+    });
 };
