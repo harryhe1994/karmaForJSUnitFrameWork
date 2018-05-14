@@ -10,6 +10,8 @@ describe('hello', function () {
 
     it('# should return testing', function () {
         expect(he.testing('hehe')).to.eq('hehe');
+        expect(he.testing('testing')).to.eq('testing');
+        expect(he.testing()).to.eq('null');
     });
 
     it('# test callHello', function () {

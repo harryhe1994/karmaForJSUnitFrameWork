@@ -40,7 +40,7 @@ module.exports = function (config) {
         ],
         reporters: [
             'spec',
-            // 'progress',
+            'progress',
             // 'coverage',
             'coverage-istanbul'
         ],
